@@ -7,9 +7,8 @@ using System.Runtime.CompilerServices;
 
 namespace AdonisUI.Demo.Framework
 {
-    class ViewModel
+    internal class ViewModel
         : INotifyPropertyChanged
-        , INotifyDataErrorInfo
         , IDataErrorInfo
     {
         private readonly Dictionary<string, IList<string>> _validationErrors = new Dictionary<string, IList<string>>();
@@ -60,7 +59,6 @@ namespace AdonisUI.Demo.Framework
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-        public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
 
         protected void RaisePropertyChanged(string propertyName)
         {

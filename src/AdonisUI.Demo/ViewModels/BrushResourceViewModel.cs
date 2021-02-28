@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Media;
+
 using AdonisUI.Demo.Framework;
 
 namespace AdonisUI.Demo.ViewModels
 {
-    class BrushResourceViewModel
+    internal class BrushResourceViewModel
         : ViewModel
     {
         public enum BrushGroup
@@ -93,7 +94,7 @@ namespace AdonisUI.Demo.ViewModels
 
             string[] statusKeywords = { "success", "error", "alert" };
 
-            if (statusKeywords.Any(keyword => brushName.Contains(keyword, StringComparison.InvariantCultureIgnoreCase)))
+            if (statusKeywords.Any(keyword => brushName.Contains(keyword)))
                 return BrushGroup.Status;
 
             return BrushGroup.Controls;

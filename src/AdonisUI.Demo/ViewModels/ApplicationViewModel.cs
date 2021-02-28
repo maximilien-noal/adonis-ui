@@ -6,13 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
+
 using AdonisUI.Demo.Commands;
 using AdonisUI.Demo.Framework;
 using AdonisUI.Demo.Services;
 
 namespace AdonisUI.Demo.ViewModels
 {
-    class ApplicationViewModel
+    internal class ApplicationViewModel
         : ViewModel
     {
         private readonly ObservableCollection<IApplicationContentView> _pages;
@@ -20,7 +21,7 @@ namespace AdonisUI.Demo.ViewModels
         public ReadOnlyObservableCollection<IApplicationContentView> Pages { get; }
 
         public ICollectionView PagesCollectionView { get; }
-        
+
         private IApplicationContentView _selectedPage;
 
         public IApplicationContentView SelectedPage
@@ -32,7 +33,7 @@ namespace AdonisUI.Demo.ViewModels
 
                 if (value != null && !value.IsLoading)
                 {
-                    Task.Run(() =>
+                    Task.Factory.StartNew(() =>
                     {
                         value.IsLoading = true;
                         value.Init();

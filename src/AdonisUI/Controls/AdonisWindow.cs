@@ -10,7 +10,9 @@ using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
+
 using AdonisUI.Helpers;
+
 using Brush = System.Windows.Media.Brush;
 using Point = System.Windows.Point;
 using Size = System.Windows.Size;
@@ -216,8 +218,8 @@ namespace AdonisUI.Controls
 
         private Thickness GetSystemMaximizeBorderThickness()
         {
-            Thickness frameThickness = SystemParameters.WindowNonClientFrameThickness;
-            Thickness resizeBorderThickness = SystemParameters.WindowResizeBorderThickness;
+            Thickness frameThickness = new Thickness(5);
+            Thickness resizeBorderThickness = new Thickness(5);
 
             return new Thickness(
                 frameThickness.Left + resizeBorderThickness.Left - 1,

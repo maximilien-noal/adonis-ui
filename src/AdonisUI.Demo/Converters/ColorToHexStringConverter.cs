@@ -8,14 +8,14 @@ using System.Windows.Media;
 
 namespace AdonisUI.Demo.Converters
 {
-    class ColorToHexStringConverter
+    internal class ColorToHexStringConverter
         : IValueConverter
     {
         public static readonly ColorToHexStringConverter Instance = new ColorToHexStringConverter();
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            Color color;
+            Color color = Color.FromArgb(0, 0, 0, 0);
 
             if (value is Color c)
                 color = c;
@@ -32,7 +32,7 @@ namespace AdonisUI.Demo.Converters
             }
             else
                 return null;
-            
+
             return $"#{color.R:X2}{color.G:X2}{color.B:X2}";
         }
 

@@ -7,22 +7,13 @@
 
     <Style TargetType="{x:Type local:AdonisWindow}"
            BasedOn="{StaticResource {x:Type Window}}">
-        <Setter Property="Foreground" Value="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
-        <Setter Property="Background" Value="{DynamicResource {x:Static adonisUi:Brushes.Layer0BackgroundBrush}}"/>
-        <Setter Property="BorderBrush" Value="{DynamicResource {x:Static adonisUi:Brushes.Layer0BorderBrush}}"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="TitleBarForeground" Value="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}"/>
-        <Setter Property="TitleBarBackground" Value="{DynamicResource {x:Static adonisUi:Brushes.Layer0BorderBrush}}"/>
-        <Setter Property="WindowButtonHighlightBrush" Value="{DynamicResource {x:Static adonisUi:Brushes.WindowButtonHighlightBrush}}"/>
-        <Setter Property="WindowChrome.WindowChrome">
-            <Setter.Value>
-                <WindowChrome ResizeBorderThickness="{Binding Source={x:Static SystemParameters.WindowResizeBorderThickness}}"
-                              CaptionHeight="0"
-                              CornerRadius="0"
-                              GlassFrameThickness="1, 2, 1, 1"
-                              NonClientFrameEdges="None"/>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}" />
+        <Setter Property="Background" Value="{DynamicResource {x:Static adonisUi:Brushes.Layer0BackgroundBrush}}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource {x:Static adonisUi:Brushes.Layer0BorderBrush}}" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="TitleBarForeground" Value="{DynamicResource {x:Static adonisUi:Brushes.ForegroundBrush}}" />
+        <Setter Property="TitleBarBackground" Value="{DynamicResource {x:Static adonisUi:Brushes.Layer0BorderBrush}}" />
+        <Setter Property="WindowButtonHighlightBrush" Value="{DynamicResource {x:Static adonisUi:Brushes.WindowButtonHighlightBrush}}" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:AdonisWindow}">
@@ -57,19 +48,19 @@
                                     <DockPanel x:Name="PART_DragMoveThumb"
                                                LastChildFill="True"
                                                Background="Transparent">
-                                        
+
                                         <Grid DockPanel.Dock="Right">
                                             <!-- Note: Defined grid rows are used to align buttons to top because VerticalAlignment="Top" makes them shrink. -->
                                             <Grid.RowDefinitions>
-                                                <RowDefinition MaxHeight="30"/>
-                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition MaxHeight="30" />
+                                                <RowDefinition Height="Auto" />
                                             </Grid.RowDefinitions>
 
                                             <Grid>
                                                 <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="Auto"/>
-                                                    <ColumnDefinition Width="Auto"/>
-                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="Auto" />
                                                 </Grid.ColumnDefinitions>
 
                                                 <Button x:Name="PART_MinimizeButton"
@@ -81,7 +72,7 @@
                                                         <DataTemplate>
                                                             <ContentControl ContentTemplate="{DynamicResource {x:Static adonisUi:Icons.WindowMinimize}}"
                                                                     Width="10"
-                                                                    Height="10"/>
+                                                                    Height="10" />
                                                         </DataTemplate>
                                                     </Button.ContentTemplate>
                                                 </Button>
@@ -95,7 +86,7 @@
                                                         <DataTemplate>
                                                             <ContentControl ContentTemplate="{DynamicResource {x:Static adonisUi:Icons.WindowMaximize}}"
                                                                     Width="10"
-                                                                    Height="10"/>
+                                                                    Height="10" />
                                                         </DataTemplate>
                                                     </Button.ContentTemplate>
                                                 </Button>
@@ -108,7 +99,7 @@
                                                         <DataTemplate>
                                                             <ContentControl ContentTemplate="{DynamicResource {x:Static adonisUi:Icons.WindowClose}}"
                                                                     Width="10"
-                                                                    Height="10"/>
+                                                                    Height="10" />
                                                         </DataTemplate>
                                                     </Button.ContentTemplate>
                                                 </Button>
@@ -117,15 +108,15 @@
 
                                         <Grid>
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="Auto"/>
-                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
                                             </Grid.ColumnDefinitions>
 
                                             <Grid VerticalAlignment="Center"
                                                   Margin="3, 0, 0, 0">
                                                 <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="Auto"/>
-                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
                                                 </Grid.ColumnDefinitions>
 
                                                 <Grid.Visibility>
@@ -140,7 +131,7 @@
                                                        Visibility="{Binding IconVisibility, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
                                                        Width="16"
                                                        Height="16"
-                                                       Margin="5, 0, 0, 0"/>
+                                                       Margin="5, 0, 0, 0" />
 
                                                 <TextBlock Grid.Column="1"
                                                            Text="{Binding Title, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
@@ -150,13 +141,13 @@
                                                            RenderOptions.ClearTypeHint="Auto"
                                                            TextOptions.TextRenderingMode="Auto"
                                                            TextOptions.TextFormattingMode="Display"
-                                                           Margin="5, 0, 0, 0"/>
+                                                           Margin="5, 0, 0, 0" />
                                             </Grid>
 
                                             <ContentPresenter Grid.Column="1"
                                                               Content="{Binding TitleBarContent, RelativeSource={RelativeSource TemplatedParent}}"
                                                               HorizontalAlignment="Stretch"
-                                                              VerticalAlignment="Stretch"/>
+                                                              VerticalAlignment="Stretch" />
                                         </Grid>
                                     </DockPanel>
                                 </Border>
@@ -165,36 +156,36 @@
                     </AdornerDecorator>
 
                     <ControlTemplate.Triggers>
-                        
+
                         <Trigger Property="IsActive" Value="False">
                             <Setter Property="TextElement.Foreground"
                                     TargetName="TitleBar"
-                                    Value="{DynamicResource {x:Static adonisUi:Brushes.DisabledForegroundBrush}}"/>
+                                    Value="{DynamicResource {x:Static adonisUi:Brushes.DisabledForegroundBrush}}" />
                             <Setter Property="Foreground"
                                     TargetName="PART_MinimizeButton"
-                                    Value="{DynamicResource {x:Static adonisUi:Brushes.DisabledForegroundBrush}}"/>
+                                    Value="{DynamicResource {x:Static adonisUi:Brushes.DisabledForegroundBrush}}" />
                             <Setter Property="Foreground"
                                     TargetName="PART_MaximizeRestoreButton"
-                                    Value="{DynamicResource {x:Static adonisUi:Brushes.DisabledForegroundBrush}}"/>
+                                    Value="{DynamicResource {x:Static adonisUi:Brushes.DisabledForegroundBrush}}" />
                             <Setter Property="Foreground"
                                     TargetName="PART_CloseButton"
-                                    Value="{DynamicResource {x:Static adonisUi:Brushes.DisabledForegroundBrush}}"/>
+                                    Value="{DynamicResource {x:Static adonisUi:Brushes.DisabledForegroundBrush}}" />
                         </Trigger>
 
                         <Trigger Property="WindowState" Value="Maximized">
                             <Setter Property="BorderThickness"
                                     TargetName="Border"
-                                    Value="{Binding MaximizeBorderThickness, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                    Value="{Binding MaximizeBorderThickness, RelativeSource={RelativeSource TemplatedParent}}" />
                             <Setter Property="BorderBrush"
                                     TargetName="Border"
-                                    Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                    Value="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" />
                             <Setter Property="ContentTemplate"
                                     TargetName="PART_MaximizeRestoreButton">
                                 <Setter.Value>
                                     <DataTemplate>
-                                      <ContentControl ContentTemplate="{DynamicResource {x:Static adonisUi:Icons.WindowRestore}}"
+                                        <ContentControl ContentTemplate="{DynamicResource {x:Static adonisUi:Icons.WindowRestore}}"
                                                       Width="10"
-                                                      Height="10"/>
+                                                      Height="10" />
                                     </DataTemplate>
                                 </Setter.Value>
                             </Setter>
@@ -214,7 +205,7 @@
                         </Trigger>
 
                         <Trigger Property="IsMouseOver" SourceName="PART_CloseButton" Value="True">
-                            <Setter Property="Foreground" TargetName="PART_CloseButton" Value="#ffffff"/>
+                            <Setter Property="Foreground" TargetName="PART_CloseButton" Value="#ffffff" />
                         </Trigger>
 
                         <Trigger Property="ResizeMode" Value="NoResize">
@@ -223,11 +214,11 @@
                         </Trigger>
 
                         <Trigger Property="ResizeMode" Value="CanMinimize">
-                            <Setter TargetName="PART_MaximizeRestoreButton" Property="IsEnabled" Value="False"/>
+                            <Setter TargetName="PART_MaximizeRestoreButton" Property="IsEnabled" Value="False" />
                         </Trigger>
 
                         <Trigger Property="WindowStyle" Value="None">
-                            <Setter TargetName="TitleBar" Property="Visibility" Value="Collapsed"/>
+                            <Setter TargetName="TitleBar" Property="Visibility" Value="Collapsed" />
                         </Trigger>
 
                         <Trigger Property="PlaceTitleBarOverContent" Value="True">
@@ -235,36 +226,15 @@
                             <Setter TargetName="WindowContent" Property="Grid.RowSpan" Value="2" />
                             <Setter Property="TitleBarBackground" Value="Transparent" />
                         </Trigger>
-
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
 
         <Style.Triggers>
-
-            <Trigger Property="WindowState" Value="Maximized">
-                <Setter Property="WindowChrome.WindowChrome">
-                    <Setter.Value>
-                        <WindowChrome ResizeBorderThickness="0"
-                                      CaptionHeight="0"
-                                      CornerRadius="0"
-                                      GlassFrameThickness="0"
-                                      NonClientFrameEdges="None"/>
-                    </Setter.Value>
-                </Setter>
-            </Trigger>
-
             <Trigger Property="WindowStyle" Value="None">
-                <Setter Property="BorderThickness" Value="0"/>
-                <Setter Property="WindowChrome.WindowChrome">
-                    <Setter.Value>
-                        <WindowChrome CaptionHeight="0"/>
-                    </Setter.Value>
-                </Setter>
+                <Setter Property="BorderThickness" Value="0" />
             </Trigger>
-
         </Style.Triggers>
     </Style>
-
 </ResourceDictionary>
